@@ -13,7 +13,7 @@ public class ConexionBDD_Ejemplo {
                             url;
     
     public Connection conexion(){
-        url = "jdbc:mysql://localhost/BDD";
+        url = "jdbc:mysql://localhost/bdd_ejemplo";
         user = "root";
         pass = "";
         try {
@@ -26,6 +26,15 @@ public class ConexionBDD_Ejemplo {
             JOptionPane.showMessageDialog(null, "No se pudo establecer la conexion error:" + e.getMessage());
         }
         return con;
+    }
+    
+    public void cerrar(){
+        try {
+            con.close();
+        } 
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "La Conexcion a la base de datos no se pudo cerrar correctamente");
+        }
     }
   
 }
